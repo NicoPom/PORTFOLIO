@@ -10,13 +10,21 @@ export default function About() {
         alt="profile_picture"
       />
       <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam,
-        voluptatum. Quisquam, quae voluptatum. Quisquam, quae voluptatum
-        Quisquam, quae voluptatum. Quisquam, quae voluptatum. Quisquam, quae
-        voluptatum. Quisquam, quae voluptatum. Quisquam, quae voluptatum.
-        Quisquam, quae voluptatum. Quisquam, quae voluptatum. Quisquam, quae
-        voluptatum. Quisquam, quae voluptatum.
+        Self taught Frontend Developer with a passion for learning and solving
+        problems.
       </p>
+      <p>
+        My stack of choice is React.js, but I am always looking to learn new
+        technologies and improve my skills.
+      </p>
+      <div className="logo--container">
+        <img src="img/react.svg" alt="react logo" />
+        <img src="img/js.svg" alt="js logo" />
+        <img src="img/html.svg" alt="html logo" />
+        <img src="img/css.svg" alt="css logo" />
+        <img src="img/git.svg" alt="git logo" />
+        <img src="img/github.svg" alt="github logo" />
+      </div>
     </div>
   );
 }
