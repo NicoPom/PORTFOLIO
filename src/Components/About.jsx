@@ -9,10 +9,7 @@ export default function About() {
         src="img/profile_picture.png"
         alt="profile_picture"
       />
-      <p>
-        Self taught Frontend Developer with a passion for learning and solving
-        problems.
-      </p>
+      <p>Self taught Frontend Developer loving to learn and solve problems.</p>
       <p>
         My stack of choice is React.js, but I am always looking to learn new
         technologies and improve my skills.
