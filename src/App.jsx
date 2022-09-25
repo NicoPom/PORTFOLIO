@@ -23,9 +23,22 @@ export default function App() {
     },
   };
 
-  function toggleNavBar(e) {
+  function toggleNavBar() {
     setIsNavBarOpen(!isNavBarOpen);
   }
+
+  // when scrolling, close the navbar
+  React.useEffect(() => {
+    window.addEventListener("scroll", () => {
+      isNavBarOpen ? toggleNavBar() : null;
+    });
+    //cleanup function
+    return () => {
+      window.removeEventListener("scroll", () => {
+        isNavBarOpen ? toggleNavBar() : null;
+      });
+    };
+  }, [isNavBarOpen]);
 
   return (
     <div className="app">
