@@ -49,22 +49,41 @@ a {
   text-decoration: none;
   color: white;
   font-family: "Albert Sans", sans-serif;
-  font-weight: 600;
+  font-weight: 400;
   font-size: 1.2rem;
-  transition: all 0.2s ease;
+  transition: all 150ms;
 }
+/* ANIMATIONS */
 
 a:hover {
   transform: scale(1.2);
-  transition: all 0.2s ease;
+  transition: all 150ms;
 }
 
 /* active class for nav links */
 .active {
+  font-weight: 500;
   filter: brightness(0) saturate(100%) invert(79%) sepia(8%) saturate(2079%)
     hue-rotate(20deg) brightness(84%) contrast(84%); /* emulates olive green color */
   transform: scale(1.2);
-  transition: all 0.2s ease;
+  transform: translateY();
+  transition: all 150ms;
+}
+
+/* classes for page transition */
+.fade-enter {
+  opacity: 0;
+  transform: translate(0, 25px);
+  z-index: 1;
+}
+.fade-enter.fade-enter-active {
+  opacity: 1;
+  transform: translate(0, 0);
+
+  transition: opacity 250ms ease-out, transform 300ms ease;
+}
+.fade-exit {
+  opacity: 0;
 }
 
 /* BUTTON */
@@ -110,6 +129,7 @@ nav {
   align-items: center;
   position: fixed;
   bottom: 0;
+  z-index: 100; /* to be always on top of the content */
 }
 
 .link {
