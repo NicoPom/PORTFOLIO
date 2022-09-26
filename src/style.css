@@ -9,8 +9,8 @@
 :root {
   --outer-space-crayola: #2f3f3eff;
   --rich-black-fogra-29: #091926ff;
-  --olive-green: #a7a453ff;
-  --coyote-brown: #8e5b3bff;
+  --olive-green: #aca95e;
+  --coyote-brown: #be9f92;
   --alice-blue: #dde8eaff;
 }
 /* TYPOGRAPHY */
@@ -21,8 +21,7 @@ h2,
 h3,
 h4,
 h5,
-h6,
-a {
+h6 {
   font-family: "Playfair Display", serif;
   font-weight: 400;
   line-height: 1.5;
@@ -48,7 +47,20 @@ h2 {
 
 a {
   text-decoration: none;
-  color: var(--gainsboro);
+  color: white;
+  font-family: "Albert Sans", sans-serif;
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+
+/* active class for nav links */
+.active {
+  color: #000;
+
+  filter: brightness(0) saturate(100%) invert(79%) sepia(8%) saturate(2079%)
+    hue-rotate(20deg) brightness(84%) contrast(84%);
+  transition: all 0.3s ease;
+  transform: scale(1.1);
 }
 
 /* BUTTON */

@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, Route, Routes } from "react-router-dom";
+import { NavLink, Route, Routes } from "react-router-dom";
 import OutsideClickHandler from "react-outside-click-handler";
 
 import Home from "./Components/Home";
@@ -27,52 +27,48 @@ export default function App() {
     setIsNavBarOpen(!isNavBarOpen);
   }
 
-  // when scrolling, close the navbar
+  // close navbar when scrolling but not when automatic scrolling to anchor
   React.useEffect(() => {
-    window.addEventListener("scroll", () => {
-      isNavBarOpen ? toggleNavBar() : null;
-    });
-    //cleanup function
-    return () => {
-      window.removeEventListener("scroll", () => {
-        isNavBarOpen ? toggleNavBar() : null;
-      });
-    };
-  }, [isNavBarOpen]);
+    function handleScroll() {
+      setIsNavBarOpen(false);
+    }
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <div className="app">
       <OutsideClickHandler onOutsideClick={() => setIsNavBarOpen(false)}>
         <button onClick={toggleNavBar}>Button</button>
         <nav style={isNavBarOpen ? styles.active : styles.hidden}>
-          <Link className="link" to="/" aria-label="Home">
+          <NavLink className="link" to="/" aria-label="Home" end>
             <img className="navbar--icon" src="img/home.svg" alt="home_icon" />
             Home
-          </Link>
-          <Link className="link" to="about" aria-label="About">
+          </NavLink>
+          <NavLink className="link" to="about" aria-label="About">
             <img
               className="navbar--icon"
               src="img/about.svg"
               alt="about_icon"
             />
             About
-          </Link>
-          <Link className="link" to="projects" aria-label="Projects">
+          </NavLink>
+          <NavLink className="link" to="projects" aria-label="Projects">
             <img
               className="navbar--icon"
               src="img/projects.svg"
               alt="projects_icon"
             />
             Projects
-          </Link>
-          <Link className="link" to="contact" aria-label="Contact">
+          </NavLink>
+          <NavLink className="link" to="contact" aria-label="Contact">
             <img
               className="navbar--icon"
               src="img/contact.svg"
               alt="contact_icon"
             />
             Contact
-          </Link>
+          </NavLink>
         </nav>
       </OutsideClickHandler>
       <Routes>
