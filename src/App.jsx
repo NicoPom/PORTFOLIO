@@ -8,6 +8,7 @@ import Navbar from "./Components/Navbar";
 
 export default function App() {
   const [isNavBarOpen, setIsNavBarOpen] = React.useState(false);
+  const [isNavButtonVisible, setIsNavButtonVisible] = React.useState(true);
   const location = useLocation();
   const RoutesELements = routes.map((route) => (
     <Route key={route.path} path={route.path} element={route.element} />
@@ -15,21 +16,34 @@ export default function App() {
 
   function closeNavBar() {
     setIsNavBarOpen(false);
+
+    setTimeout(() => {
+      setIsNavButtonVisible(true);
+    }, 300);
   }
 
   function openNavBar() {
-    setIsNavBarOpen(true);
+    setIsNavButtonVisible(false);
+    setTimeout(() => {
+      setIsNavBarOpen(true);
+    }, 300);
   }
 
-  React.useEffect(() => {
-    window.addEventListener("scroll", closeNavBar);
-    return () => window.removeEventListener("scroll", closeNavBar);
-  }, []);
+  //close navbar on scroll. It can be annoying for the user actually.
+  // React.useEffect(() => {
+  //   window.addEventListener("scroll", closeNavBar);
+  //   return () => window.removeEventListener("scroll", closeNavBar);
+  // }, []);
 
   return (
     <div className="app">
       <OutsideClickHandler onOutsideClick={() => closeNavBar()}>
-        <button onClick={openNavBar}>Button</button>
+        <button
+          className={isNavButtonVisible ? "button--visible" : "button--hidden"}
+          onClick={openNavBar}
+        >
+          Button
+        </button>
         <Navbar isNavBarOpen={isNavBarOpen} />
       </OutsideClickHandler>
 

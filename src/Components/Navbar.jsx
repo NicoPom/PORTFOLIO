@@ -2,29 +2,34 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 
 export default function Navbar(props) {
-  const styles = {
-    visible: {
-      visibility: "visible",
-      transition: "all 0.5s",
-      transform: "translateX(0vw)",
-    },
-    hidden: {
-      visibility: "hidden",
-      transition: "all 0.5s",
-      transform: "translateX(+100vw)",
-    },
-  };
+  const navClassName = props.isNavBarOpen
+    ? "navbar--visible"
+    : "navbar--hidden";
+  const linkClassName = props.isNavBarOpen ? "link--visible" : "link--hidden";
   return (
-    <nav style={props.isNavBarOpen ? styles.visible : styles.hidden}>
-      <NavLink className="link" to="/" aria-label="Home" end>
+    <nav className={navClassName}>
+      <NavLink
+        className={"navlink" + " " + linkClassName}
+        to="/"
+        aria-label="Home"
+        end
+      >
         <img className="navbar--icon" src="img/home.svg" alt="home_icon" />
         Home
       </NavLink>
-      <NavLink className="link" to="about" aria-label="About">
+      <NavLink
+        className={"navlink" + " " + linkClassName}
+        to="about"
+        aria-label="About"
+      >
         <img className="navbar--icon" src="img/about.svg" alt="about_icon" />
         About
       </NavLink>
-      <NavLink className="link" to="projects" aria-label="Projects">
+      <NavLink
+        className={"navlink" + " " + linkClassName}
+        to="projects"
+        aria-label="Projects"
+      >
         <img
           className="navbar--icon"
           src="img/projects.svg"
@@ -32,7 +37,11 @@ export default function Navbar(props) {
         />
         Projects
       </NavLink>
-      <NavLink className="link" to="contact" aria-label="Contact">
+      <NavLink
+        className={"navlink" + " " + linkClassName}
+        to="contact"
+        aria-label="Contact"
+      >
         <img
           className="navbar--icon"
           src="img/contact.svg"
