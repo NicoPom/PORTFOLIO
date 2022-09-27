@@ -128,21 +128,21 @@ nav {
 /* -- Navbar Animation -- */
 
 nav {
-  transition: all 150ms;
+  transition: all 250ms;
 }
 
 .navbar--hidden {
-  transition: all 150ms;
   transform: translateX(+98vw);
   visibility: hidden;
   width: 0vw;
+  transition: all 250ms;
 }
 
 /* non active */
 .navlink {
   visibility: visible;
-  transition: all 150ms;
-  transition-property: transform; /* to avoid the transition of the visibility property */
+  filter: none;
+  transition: all 250ms;
 }
 
 /* active class for nav links */
@@ -150,12 +150,12 @@ nav {
   filter: brightness(0) saturate(100%) invert(79%) sepia(8%) saturate(2079%)
     hue-rotate(20deg) brightness(84%) contrast(84%); /* emulates olive green color */
   transform: scale(1.2);
-  transition: all 150ms;
+  transition: all 250ms;
 }
 
 .navlink--hidden {
   visibility: hidden;
-  transition: all 150ms;
+  transition: all 250ms;
   transition-property: transform;
 }
 
@@ -165,19 +165,22 @@ nav {
 
 /* Button Animation */
 
-.button--visible {
-  transition: all 150ms;
+button {
   scale: 1;
   visibility: visible;
+  transition: all 250ms;
 }
 
 .button--hidden {
-  transition: all 150ms;
   scale: 0;
   visibility: hidden;
+  transition: all 250ms;
 }
 
-button:hover {
+button:hover .menu--icon {
+  filter: brightness(0) saturate(100%) invert(79%) sepia(8%) saturate(2079%)
+    hue-rotate(20deg) brightness(84%) contrast(84%); /* emulates olive green color */
+  transition: all 250ms;
 }
 
 /* -- Page Animation -- */
@@ -191,7 +194,7 @@ button:hover {
 .fade-enter.fade-enter-active {
   opacity: 1;
   transform: translate(0, 0);
-  transition: opacity 250ms ease-out, transform 150ms ease;
+  transition: opacity 250ms ease-out, transform 250ms;
 }
 .fade-exit {
   display: none;

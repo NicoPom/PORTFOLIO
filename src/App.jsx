@@ -38,11 +38,11 @@ export default function App() {
     <div className="app">
       <OutsideClickHandler onOutsideClick={closeNavBar}>
         <button
-          className={isNavButtonVisible ? "button--visible" : "button--hidden"}
+          className={isNavButtonVisible ? "" : "button--hidden"}
           onClick={openNavBar}
           aria-label="Open navigation"
         >
-          <img src="img/menu.svg" alt="menu icon" />
+          <img className="menu--icon" src="img/menu.svg" alt="menu icon" />
         </button>
         <Navbar isNavBarOpen={isNavBarOpen} />
       </OutsideClickHandler>
