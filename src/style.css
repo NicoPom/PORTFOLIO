@@ -58,7 +58,7 @@ a {
 button {
   all: unset;
   background-color: var(--outer-space-crayola);
-  text-align: center;
+
   cursor: pointer;
   position: fixed;
   bottom: 1%;
@@ -68,6 +68,10 @@ button {
   border-radius: 50%;
 }
 
+button > img {
+  display: block;
+  margin: 0 auto;
+}
 /** ==== LAYOUT ==== */
 
 html {
@@ -90,6 +94,7 @@ html {
 
 nav {
   background: var(--outer-space-crayola);
+  width: 96vw;
   height: 90px;
   border-radius: 2rem;
   display: flex;
@@ -120,73 +125,74 @@ nav {
 
 /** ==== ANIMATIONS ==== **/
 
-.navlink:hover {
-  transform: scale(1.2);
-  transition: transform 300ms;
+/* -- Navbar Animation -- */
+
+nav {
+  transition: all 150ms;
+}
+
+.navbar--hidden {
+  transition: all 150ms;
+  transform: translateX(+98vw);
+  visibility: hidden;
+  width: 0vw;
+}
+
+/* non active */
+.navlink {
+  visibility: visible;
+  transition: all 150ms;
+  transition-property: transform; /* to avoid the transition of the visibility property */
 }
 
 /* active class for nav links */
 .active {
-  font-weight: 500;
   filter: brightness(0) saturate(100%) invert(79%) sepia(8%) saturate(2079%)
     hue-rotate(20deg) brightness(84%) contrast(84%); /* emulates olive green color */
   transform: scale(1.2);
   transition: all 150ms;
 }
 
-/* navbar animation */
-.navbar--visible {
-  transition: all 300ms;
-  transform: translateX(0vw);
-  visibility: visible;
-  width: 96vw;
-}
-
-.navbar--hidden {
-  transition: all 300ms;
-  transform: translateX(+98vw);
+.navlink--hidden {
   visibility: hidden;
-  width: 0vw;
-}
-
-.link--visible {
-  visibility: visible;
-  transition: all 300ms;
-  transition-property: transform; /* to avoid the transition of the visibility property */
-}
-
-.link--hidden {
-  visibility: hidden;
-  transition: all 300ms;
+  transition: all 150ms;
   transition-property: transform;
 }
 
-/* button animation */
+.navlink:hover {
+  transform: scale(1.2);
+}
+
+/* Button Animation */
 
 .button--visible {
-  transition: all 300ms;
+  transition: all 150ms;
   scale: 1;
   visibility: visible;
 }
 
 .button--hidden {
-  transition: all 300ms;
+  transition: all 150ms;
   scale: 0;
   visibility: hidden;
 }
 
-/* classes for page transition */
+button:hover {
+}
+
+/* -- Page Animation -- */
+
+/* classes for page transition with CSSTransition*/
 .fade-enter {
   opacity: 0;
-  transform: translate(0, 25px);
+  transform: translate(-50px, 0);
   z-index: 1;
 }
 .fade-enter.fade-enter-active {
   opacity: 1;
   transform: translate(0, 0);
-
-  transition: opacity 250ms ease-out, transform 300ms ease;
+  transition: opacity 250ms ease-out, transform 150ms ease;
 }
 .fade-exit {
-  opacity: 0;
+  display: none;
 }

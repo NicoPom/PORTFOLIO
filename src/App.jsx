@@ -16,17 +16,16 @@ export default function App() {
 
   function closeNavBar() {
     setIsNavBarOpen(false);
-
     setTimeout(() => {
       setIsNavButtonVisible(true);
-    }, 300);
+    }, 150);
   }
 
   function openNavBar() {
     setIsNavButtonVisible(false);
     setTimeout(() => {
       setIsNavBarOpen(true);
-    }, 300);
+    }, 150);
   }
 
   //close navbar on scroll. It can be annoying for the user actually.
@@ -37,12 +36,13 @@ export default function App() {
 
   return (
     <div className="app">
-      <OutsideClickHandler onOutsideClick={() => closeNavBar()}>
+      <OutsideClickHandler onOutsideClick={closeNavBar}>
         <button
           className={isNavButtonVisible ? "button--visible" : "button--hidden"}
           onClick={openNavBar}
+          aria-label="Open navigation"
         >
-          Button
+          <img src="img/menu.svg" alt="menu icon" />
         </button>
         <Navbar isNavBarOpen={isNavBarOpen} />
       </OutsideClickHandler>

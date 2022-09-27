@@ -2,10 +2,8 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 
 export default function Navbar(props) {
-  const navClassName = props.isNavBarOpen
-    ? "navbar--visible"
-    : "navbar--hidden";
-  const linkClassName = props.isNavBarOpen ? "link--visible" : "link--hidden";
+  const navClassName = props.isNavBarOpen ? "" : "navbar--hidden";
+  const linkClassName = props.isNavBarOpen ? "" : "navlink--hidden";
   return (
     <nav className={navClassName}>
       <NavLink
