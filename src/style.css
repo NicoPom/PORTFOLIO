@@ -14,15 +14,13 @@
   --alice-blue: #dde8eaff;
 }
 /** ==== TYPOGRAPHY ==== **/
+html,
+body {
+  font-size: 18px;
+}
 
-body,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: Playfair Display, serif;
+body {
+  font-family: "Cormorant Garamond", serif;
   font-weight: 400;
   line-height: 1.5;
   color: whitesmoke;
@@ -34,15 +32,16 @@ h3,
 h4,
 h5,
 h6 {
-  line-height: 1.2;
+  font-weight: 300;
+  line-height: 1;
 }
 
 h1 {
-  font-size: 4.5rem;
+  font-size: 4rem;
 }
 
 h2 {
-  font-size: 2.4rem;
+  font-size: 2.2rem;
 }
 
 a {
@@ -50,7 +49,6 @@ a {
   color: whitesmoke;
   font-family: Albert Sans, sans-serif;
   font-weight: 400;
-  font-size: 1.2rem;
 }
 
 /** ==== BUTTON ==== **/
@@ -75,7 +73,7 @@ html {
 }
 
 .container {
-  padding: 1rem;
+  padding: 1.5rem;
   margin-bottom: 100px;
   margin: 0 auto;
 }
