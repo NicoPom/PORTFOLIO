@@ -18,14 +18,14 @@ export default function App() {
     setIsNavBarOpen(false);
     setTimeout(() => {
       setIsNavButtonVisible(true);
-    }, 150);
+    }, 200);
   }
 
   function openNavBar() {
     setIsNavButtonVisible(false);
     setTimeout(() => {
       setIsNavBarOpen(true);
-    }, 150);
+    }, 200);
   }
 
   //close navbar on scroll. It can be annoying for the user actually.

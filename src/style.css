@@ -58,11 +58,7 @@ a {
 button {
   all: unset;
   background-color: var(--outer-space-crayola);
-
   cursor: pointer;
-  position: fixed;
-  bottom: 1%;
-  right: 2%;
   height: 90px;
   width: 90px;
   border-radius: 50%;
@@ -92,6 +88,12 @@ html {
   margin: 0 auto;
 }
 
+button {
+  position: fixed;
+  bottom: 1%;
+  right: 2%;
+}
+
 nav {
   background: var(--outer-space-crayola);
   width: 96vw;
@@ -102,7 +104,7 @@ nav {
   align-items: center;
   position: fixed;
   bottom: 1%;
-  left: 2%;
+  right: 2%;
   z-index: 100; /* to always be on top of the content */
 }
 
@@ -117,12 +119,6 @@ nav {
   height: 30px;
 }
 
-.logo--container {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-}
-
 /** ==== ANIMATIONS ==== **/
 
 /* -- Navbar Animation -- */
@@ -132,55 +128,55 @@ nav {
 }
 
 .navbar--hidden {
-  transform: translateX(+98vw);
   visibility: hidden;
   width: 0vw;
-  transition: all 250ms;
 }
 
-/* non active */
+/* Navlinks Animation */
+
 .navlink {
   visibility: visible;
-  filter: none;
-  transition: all 250ms;
-}
-
-/* active class for nav links */
-.active {
-  filter: brightness(0) saturate(100%) invert(79%) sepia(8%) saturate(2079%)
-    hue-rotate(20deg) brightness(84%) contrast(84%); /* emulates olive green color */
-  transform: scale(1.2);
   transition: all 250ms;
 }
 
 .navlink--hidden {
   visibility: hidden;
-  transition: all 250ms;
   transition-property: transform;
 }
 
-.navlink:hover {
+.navlink:hover,
+.navlink:focus {
+  transform: scale(1.2);
+}
+
+/* active class for .navlink */
+.active {
+  filter: brightness(0) saturate(100%) invert(79%) sepia(8%) saturate(2079%)
+    hue-rotate(20deg) brightness(84%) contrast(84%); /* emulates olive green color */
   transform: scale(1.2);
 }
 
 /* Button Animation */
 
 button {
-  scale: 1;
   visibility: visible;
   transition: all 250ms;
 }
 
 .button--hidden {
-  scale: 0;
-  visibility: hidden;
+  transform: scale(0);
+}
+
+.menu--icon {
+  visibility: visible;
   transition: all 250ms;
 }
 
-button:hover .menu--icon {
+button:hover .menu--icon,
+button:focus .menu--icon {
+  transform: rotate(180deg);
   filter: brightness(0) saturate(100%) invert(79%) sepia(8%) saturate(2079%)
     hue-rotate(20deg) brightness(84%) contrast(84%); /* emulates olive green color */
-  transition: all 250ms;
 }
 
 /* -- Page Animation -- */
@@ -188,7 +184,7 @@ button:hover .menu--icon {
 /* classes for page transition with CSSTransition*/
 .fade-enter {
   opacity: 0;
-  transform: translate(-50px, 0);
+  transform: translate(0, +50px);
   z-index: 1;
 }
 .fade-enter.fade-enter-active {
