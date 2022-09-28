@@ -75,18 +75,12 @@ html {
 }
 
 .container {
-  width: 90%;
+  padding: 1rem;
   margin-bottom: 100px;
   margin: 0 auto;
 }
 
-.profile--picture {
-  display: block;
-  width: 100%;
-  max-width: 500px;
-  border-radius: 30%;
-  margin: 0 auto;
-}
+/* Home */
 
 button {
   position: fixed;
@@ -117,6 +111,22 @@ nav {
 .navbar--icon {
   width: 30px;
   height: 30px;
+}
+
+/* About */
+
+.profile--picture {
+  display: block;
+  width: 100%;
+  max-width: 500px;
+  border-radius: 30%;
+  margin: 0 auto;
+}
+
+.logo--container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 /** ==== ANIMATIONS ==== **/
