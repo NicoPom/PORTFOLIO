@@ -2,7 +2,7 @@ import React from "react";
 
 export default function Contact() {
   return (
-    <div className="contact container">
+    <div className="container">
       <h2>Contact</h2>
       <p>
         <a href="mailto: nicolaspomaresdev@gmail.com">

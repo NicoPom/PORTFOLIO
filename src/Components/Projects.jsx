@@ -4,46 +4,50 @@ import { projects } from "../projectsData";
 export default function Projects() {
   function handleMouseOver(e) {
     e.target.play();
+    e.target.style = "opacity: 1";
   }
 
   function handleMouseOut(e) {
     e.target.pause();
-
-    // This is to reset the video to the beginning
+    e.target.style = "opacity: 0";
+    // rewind to the beginning
     e.target.currentTime = 0;
-    e.target.load();
   }
 
   const projectElements = projects.map((project) => (
-    <div className="project" key={projects.indexOf(project)}>
-      <h3>{project.title}</h3>
-      <a href={project.liveSite}>
+    <li className="project--item" key={project.id}>
+      <h3 className="project--title">{project.title}</h3>
+      <div
+        className="project--card"
+        style={{ backgroundImage: `url(${project.thumbnail})` }}
+      >
         <video
           className="project--video"
-          poster="img/profile_picture.png"
+          src={project.videoURL}
+          preload="auto"
           onMouseOver={handleMouseOver}
           onMouseOut={handleMouseOut}
           muted
-        >
-          <source src={project.videoURL} type="video/mp4" />
-        </video>
-      </a>
-
+          loop
+        ></video>
+        <a href={project.liveSite}></a>
+      </div>
+      <p className="project--description">{project.description}</p>
       <div className="project--links">
-        <a href={project.liveSite} rel="noopener noreferrer">
+        <a href={project.liveSite} className="project--link">
           Live Site ↗
         </a>
-        <a href={project.github} rel="noopener noreferrer">
-          GitHub ↗
+        <a href={project.github} className="project--link">
+          Github ↗
         </a>
       </div>
-    </div>
+    </li>
   ));
 
   return (
-    <div className="projects container">
+    <div className="container">
       <h2>Projects</h2>
-      {projectElements}
+      <ul className="project--list">{projectElements}</ul>
     </div>
   );
 }

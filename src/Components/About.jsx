@@ -2,7 +2,7 @@ import React from "react";
 
 export default function About() {
   return (
-    <div className="about container">
+    <div className="container">
       <h2>About</h2>
       <img
         className="profile--picture"

@@ -13,6 +13,7 @@
   --coyote-brown: #be9f92;
   --alice-blue: #dde8eaff;
 }
+
 /** ==== TYPOGRAPHY ==== **/
 html,
 body {
@@ -131,21 +132,25 @@ nav {
 
 /* Projects */
 
-.project {
+.project--list {
   display: flex;
   flex-direction: column;
-  align-items: center;
   margin-bottom: 1.5rem;
 }
-.project--video {
-  width: 100%;
-  max-width: 500px;
-  height: 75vh;
-  object-fit: cover;
-  border-radius: 2rem;
+
+.project--card {
+  width: 80vw;
+  border: 1px solid red;
+  background-position: center;
+  background-size: cover;
 }
 
-/** ==== 
+.project--video {
+  width: 100%;
+  opacity: 0;
+  object-fit: cover;
+}
+
 /** ==== ANIMATIONS ==== **/
 
 /* -- Navbar Animation -- */
