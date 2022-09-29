@@ -49,7 +49,7 @@ a {
   text-decoration: none;
   color: whitesmoke;
   font-family: Albert Sans, sans-serif;
-  font-weight: 400;
+  font-weight: 300;
 }
 
 /** ==== BUTTON ==== **/
@@ -120,7 +120,7 @@ nav {
   display: block;
   width: 100%;
   max-width: 500px;
-  border-radius: 30%;
+  border-radius: 3rem;
   margin: 0 auto;
 }
 
@@ -137,6 +137,7 @@ nav {
   flex-direction: column;
   align-items: center;
   margin-bottom: 1.5rem;
+  list-style-type: none;
 }
 
 .project--card {
@@ -144,12 +145,20 @@ nav {
   height: 70vh;
   background-position: center;
   background-size: cover;
+  border-radius: 2rem;
+  margin-bottom: 0.5rem;
 }
 
 .project--video {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  border-radius: 2rem;
+}
+
+.project--links {
+  display: flex;
+  justify-content: space-evenly;
 }
 
 /** ==== ANIMATIONS ==== **/
@@ -166,20 +175,22 @@ nav {
 }
 
 /* Navlinks Animation */
+a {
+  transition: all 250ms;
+}
+
+a:hover,
+a:focus {
+  transform: scale(1.2);
+}
 
 .navlink {
   visibility: visible;
-  transition: all 250ms;
 }
 
 .navlink--hidden {
   visibility: hidden;
   transition-property: transform;
-}
-
-.navlink:hover,
-.navlink:focus {
-  transform: scale(1.2);
 }
 
 /* active class for .navlink */
@@ -228,4 +239,10 @@ button:focus .menu--icon {
 }
 .fade-exit {
   display: none;
+}
+
+/* -- Project Animation -- */
+
+.project--video {
+  transition: all 250ms;
 }

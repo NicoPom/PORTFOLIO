@@ -8,7 +8,7 @@ export default function Projects() {
     e.target.style = "opacity: 1";
     setTimeout(() => {
       e.target.play();
-    }, 100); // delay to prevent error
+    }, 150); // delay to prevent error
   }
 
   function handleMouseOut(e) {
