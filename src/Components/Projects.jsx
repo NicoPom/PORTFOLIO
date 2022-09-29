@@ -2,6 +2,10 @@ import React from "react";
 import { projects } from "../projectsData";
 
 export default function Projects() {
+  const isMobile = "ontouchstart" in document.documentElement;
+
+  console.log(isMobile);
+
   function handleMouseOver(e) {
     e.target.style = "opacity: 1";
     setTimeout(() => {
@@ -28,8 +32,11 @@ export default function Projects() {
             className="project--video"
             src={project.videoURL}
             preload="auto"
-            onMouseOver={handleMouseOver}
-            onMouseOut={handleMouseOut}
+            // autoplay only on mobile
+            autoPlay={isMobile}
+            onMouseOver={isMobile ? null : handleMouseOver}
+            onMouseOut={isMobile ? null : handleMouseOut}
+            style={{ opacity: isMobile ? 1 : 0 }}
             muted
             loop
           ></video>
