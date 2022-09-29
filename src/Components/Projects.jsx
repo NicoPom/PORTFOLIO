@@ -3,15 +3,17 @@ import { projects } from "../projectsData";
 
 export default function Projects() {
   function handleMouseOver(e) {
-    e.target.play();
     e.target.style = "opacity: 1";
+    setTimeout(() => {
+      e.target.play();
+    }, 100); // delay to prevent error
   }
 
   function handleMouseOut(e) {
-    e.target.pause();
     e.target.style = "opacity: 0";
     // rewind to the beginning
     e.target.currentTime = 0;
+    e.target.pause();
   }
 
   const projectElements = projects.map((project) => (
@@ -21,16 +23,17 @@ export default function Projects() {
         className="project--card"
         style={{ backgroundImage: `url(${project.thumbnail})` }}
       >
-        <video
-          className="project--video"
-          src={project.videoURL}
-          preload="auto"
-          onMouseOver={handleMouseOver}
-          onMouseOut={handleMouseOut}
-          muted
-          loop
-        ></video>
-        <a href={project.liveSite}></a>
+        <a href={project.liveSite}>
+          <video
+            className="project--video"
+            src={project.videoURL}
+            preload="auto"
+            onMouseOver={handleMouseOver}
+            onMouseOut={handleMouseOut}
+            muted
+            loop
+          ></video>
+        </a>
       </div>
       <p className="project--description">{project.description}</p>
       <div className="project--links">

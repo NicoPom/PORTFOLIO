@@ -135,19 +135,22 @@ nav {
 .project--list {
   display: flex;
   flex-direction: column;
+  align-items: center;
   margin-bottom: 1.5rem;
 }
 
 .project--card {
   width: 80vw;
+  height: 80vh;
   border: 1px solid red;
   background-position: center;
   background-size: cover;
 }
 
 .project--video {
+  opacity: 1;
   width: 100%;
-  opacity: 0;
+  height: 100%;
   object-fit: cover;
 }
 
