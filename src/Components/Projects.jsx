@@ -2,9 +2,7 @@ import React from "react";
 import { projects } from "../projectsData";
 
 export default function Projects() {
-  const isMobile = "ontouchstart" in document.documentElement;
-
-  console.log(isMobile);
+  const isMobile = "ontouchstart" in document.documentElement; // check if device is mobile
 
   function handleMouseOver(e) {
     e.target.style = "opacity: 1";
@@ -32,8 +30,7 @@ export default function Projects() {
             className="project--video"
             src={project.videoURL}
             preload="auto"
-            // autoplay only on mobile
-            autoPlay={isMobile}
+            autoPlay={isMobile} // autoplay on mobile
             onMouseOver={isMobile ? null : handleMouseOver}
             onMouseOut={isMobile ? null : handleMouseOut}
             style={{ opacity: isMobile ? 1 : 0 }}
