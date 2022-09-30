@@ -21,6 +21,7 @@ export default function Projects() {
   const projectElements = projects.map((project) => (
     <li className="project--item" key={project.id}>
       <h3 className="project--title">{project.title}</h3>
+      <p className="project--description">{project.description}</p>
       <div
         className="project--card"
         style={{ backgroundImage: `url(${project.thumbnail})` }}
@@ -39,12 +40,12 @@ export default function Projects() {
           ></video>
         </a>
       </div>
-      <p className="project--description">{project.description}</p>
+
       <div className="project--links">
-        <a href={project.liveSite} className="project--link">
+        <a href={project.liveSite} className="project--link external--link">
           Live Site ↗
         </a>
-        <a href={project.github} className="project--link">
+        <a href={project.github} className="project--link external--link">
           Github ↗
         </a>
       </div>
@@ -54,7 +55,7 @@ export default function Projects() {
   return (
     <div className="container">
       <h2>Projects</h2>
-      <ul className="project--list">{projectElements}</ul>
+      <ul className="projects--list">{projectElements}</ul>
     </div>
   );
 }
