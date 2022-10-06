@@ -20,7 +20,7 @@ export default function Projects() {
 
   const projectElements = projects.map((project) => (
     <li className="project--item" key={project.id}>
-      <h3 className="project--title">{project.title}</h3>
+      <h4 className="project--title">{project.title}</h4>
       <p className="project--description">{project.description}</p>
       <div
         className="project--card"

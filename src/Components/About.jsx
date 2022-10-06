@@ -2,13 +2,9 @@ import React from "react";
 
 export default function About() {
   return (
-    <div className="container">
+    <div className="container about--container">
       <h2>About</h2>
-      <img
-        className="profile--picture"
-        src="img/profile_picture.png"
-        alt="profile_picture"
-      />
+
       <p>Self taught Frontend Developer loving to learn and solve problems.</p>
       <p>
         My stack of choice is React.js, but I am always looking to learn new
