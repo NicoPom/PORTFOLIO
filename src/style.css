@@ -14,6 +14,10 @@
   --alice-blue: #dde8eaff;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 /** ==== TYPOGRAPHY ==== **/
 html,
 body {
