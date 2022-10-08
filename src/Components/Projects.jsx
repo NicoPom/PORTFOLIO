@@ -53,7 +53,7 @@ export default function Projects() {
   ));
 
   return (
-    <div className="container">
+    <div className="container project--container">
       <h2>Projects</h2>
       <ul className="projects--list">{projectElements}</ul>
     </div>

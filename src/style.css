@@ -24,6 +24,13 @@ body {
   font-size: 18px;
 }
 
+@media screen and (min-width: 768px) {
+  html,
+  body {
+    font-size: 22px;
+  }
+}
+
 body {
   font-family: "Cormorant Garamond", serif;
   font-weight: 400;
@@ -93,10 +100,15 @@ html {
 
 .container {
   width: 90%;
+
   min-height: 90vh;
+  max-width: 1200px;
   padding: 1rem 0;
   margin-bottom: 100px;
   margin: 0 auto;
+
+  display: flex;
+  flex-direction: column;
 }
 
 h1 {
@@ -104,7 +116,6 @@ h1 {
 
 h2 {
   margin-bottom: 1.5rem;
-  text-align: center;
 }
 
 h3 {
@@ -149,12 +160,6 @@ nav {
 
 /* Home */
 
-.home--container {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
 .profile--picture {
   display: block;
 
@@ -164,12 +169,21 @@ nav {
   margin: 0 auto;
 }
 
+@media screen and (min-width: 768px) {
+  .profile--picture {
+    max-width: 600px;
+  }
+}
+
 /* About */
 
 .logo--container {
+  min-height: 50vh;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
+  margin-top: 1rem;
 }
 
 /* Projects */
@@ -223,9 +237,12 @@ nav {
 /* Contact */
 
 .contact--links--container {
+  min-height: 100%;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
 }
 
 /** ==== ANIMATIONS ==== **/
