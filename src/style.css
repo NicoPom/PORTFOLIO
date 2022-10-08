@@ -66,6 +66,12 @@ a {
   color: whitesmoke;
   font-family: Albert Sans, sans-serif;
   font-weight: 300;
+  transition: all 150ms ease-in-out;
+}
+
+a:hover,
+a:focus {
+  transform: scale(1.1);
 }
 
 /** ==== BUTTON ==== **/
@@ -100,22 +106,51 @@ html {
 
 .container {
   width: 90%;
-
   min-height: 90vh;
   max-width: 1200px;
   padding: 1rem 0;
   margin-bottom: 100px;
   margin: 0 auto;
-
   display: flex;
   flex-direction: column;
+
+  border: 1px solid red;
 }
 
-h1 {
+@media screen and (min-width: 768px) {
+  .container {
+    padding: 1.5rem 0;
+    max-width: 70vw;
+  }
 }
 
-h2 {
-  margin-bottom: 1.5rem;
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+@media screen and (min-width: 768px) {
+  header {
+    margin-bottom: 2rem;
+  }
+}
+
+.home--link--picture {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: var(--olive-green);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.home--link--picture:hover,
+.home--link--picture:focus {
+  outline: 2px solid var(--olive-green);
 }
 
 h3 {
@@ -150,7 +185,7 @@ nav {
 
 @media screen and (min-width: 768px) {
   nav {
-    max-width: 1200px;
+    max-width: 70vw;
     right: 50%;
     transform: translateX(50%);
   }
@@ -167,6 +202,13 @@ nav {
   height: 30px;
 }
 
+@media screen and (min-width: 768px) {
+  .navbar--icon {
+    width: 35px;
+    height: 35px;
+  }
+}
+
 /* Home */
 
 .profile--picture {
@@ -180,7 +222,7 @@ nav {
 
 @media screen and (min-width: 768px) {
   .profile--picture {
-    max-width: 600px;
+    max-width: 525px;
   }
 }
 
@@ -203,11 +245,14 @@ nav {
   list-style-type: none;
 }
 
+@media screen and (min-width: 768px) {
+}
+
 .project--item {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 80vw;
+  width: 75vw;
   border-bottom: 1px solid var(--olive-green);
   margin-bottom: 1.5rem;
 }
@@ -253,18 +298,15 @@ nav {
   margin: auto;
 }
 
-/** ==== ANIMATIONS ==== **/
-
-/* links */
-
-a {
-  transition: all 150ms;
+.contact--link {
+  margin-bottom: 1rem;
 }
 
-a:hover,
-a:focus {
-  transform: scale(1.1);
-}
+/*
+
+=========== ANIMATIONS =========== 
+
+*/
 
 /* external links */
 

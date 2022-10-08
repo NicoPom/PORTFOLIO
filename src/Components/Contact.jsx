@@ -3,7 +3,12 @@ import React from "react";
 export default function Contact() {
   return (
     <div className="container contact--container">
-      <h2 className="contact--title">Contact</h2>
+      <header>
+        <h2 className="contact--title">Contact</h2>
+        <a href="/" className="home--link">
+          <img src="img/profile_picture.png" className="home--link--picture" />
+        </a>
+      </header>
       <div className="contact--links--container">
         <a
           className="contact--link external--link"

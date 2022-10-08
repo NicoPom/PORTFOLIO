@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 import { projects } from "../projectsData";
 
 export default function Projects() {
@@ -54,7 +55,12 @@ export default function Projects() {
 
   return (
     <div className="container project--container">
-      <h2>Projects</h2>
+      <header>
+        <h2>Projects</h2>
+        <a href="/" className="home--link">
+          <img src="img/profile_picture.png" className="home--link--picture" />
+        </a>
+      </header>
       <ul className="projects--list">{projectElements}</ul>
     </div>
   );

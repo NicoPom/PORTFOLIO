@@ -3,7 +3,12 @@ import React from "react";
 export default function About() {
   return (
     <div className="container about--container">
-      <h2>About</h2>
+      <header>
+        <h2>About</h2>
+        <a href="/" className="home--link">
+          <img src="img/profile_picture.png" className="home--link--picture" />
+        </a>
+      </header>
 
       <p>Self taught Frontend Developer loving to learn and solve problems.</p>
       <p>
