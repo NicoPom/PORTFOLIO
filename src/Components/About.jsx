@@ -6,7 +6,7 @@ export default function About() {
       <header>
         <h2>About</h2>
         <a href="/" className="home--link">
-          <img src="img/profile_picture.png" className="home--link--picture" />
+          NP
         </a>
       </header>
 
