@@ -24,6 +24,7 @@ export default function Projects() {
       <h4 className="project--title">{project.title}</h4>
       <p className="project--description">{project.description}</p>
       <div className="project--stack">
+        Stack used:
         {project.stack.map((tech) => (
           <ul className="project--tech" key={tech}>
             {tech}
@@ -50,7 +51,11 @@ export default function Projects() {
       </div>
 
       <div className="project--links">
-        <a href={project.liveSite} className="project--link external--link">
+        <a
+          href={project.liveSite}
+          className="project--link external--link"
+          target="_blank"
+        >
           Live Site ↗
         </a>
         <a href={project.github} className="project--link external--link">
