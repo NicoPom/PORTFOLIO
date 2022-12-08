@@ -263,10 +263,18 @@ nav {
   margin-bottom: 1rem;
 }
 
+.project--stack {
+  display: flex;
+  gap: 1em;
+  margin-bottom: 1rem;
+}
+
 .project--card {
   height: 75vh;
   background-position: center;
-  background-size: cover;
+  background-size: auto 100%;
+  background-repeat: no-repeat;
+
   border-radius: 2rem;
   margin-bottom: 1rem;
 }

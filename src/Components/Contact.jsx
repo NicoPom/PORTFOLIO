@@ -6,7 +6,7 @@ export default function Contact() {
       <header>
         <h2 className="contact--title">Contact</h2>
         <a href="/" className="home--link">
-          <img src="img/profile_picture.png" className="home--link--picture" />
+          NP
         </a>
       </header>
       <div className="contact--links--container">

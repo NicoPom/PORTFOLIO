@@ -23,6 +23,13 @@ export default function Projects() {
     <li className="project--item" key={project.id}>
       <h4 className="project--title">{project.title}</h4>
       <p className="project--description">{project.description}</p>
+      <div className="project--stack">
+        {project.stack.map((tech) => (
+          <ul className="project--tech" key={tech}>
+            {tech}
+          </ul>
+        ))}
+      </div>
       <div
         className="project--card"
         style={{ backgroundImage: `url(${project.thumbnail})` }}
@@ -58,7 +65,7 @@ export default function Projects() {
       <header>
         <h2>Projects</h2>
         <a href="/" className="home--link">
-          <img src="img/profile_picture.png" className="home--link--picture" />
+          NP
         </a>
       </header>
       <ul className="projects--list">{projectElements}</ul>
