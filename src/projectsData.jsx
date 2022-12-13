@@ -5,8 +5,8 @@ export const projects = [
     thumbnail: "img/projects/noirdamas.png",
     alt: "noir damas project thumbnail",
     videoURL: "",
-    liveSite: "https://noir-damas-test.netlify.app/",
-    github: "",
+    liveSite: "https://noir-damas-secure.netlify.app/",
+    github: "https://github.com/NicoPom/noir-damas-secure",
     description:
       "For this project, I created a portfolio website for a talented blacksmith using the React JavaScript library and the Contenful headless CMS, giving him the ability to update his portfolio without having to rely on a developer.",
     stack: ["React", "Contentful", "API", "Netlify"],
