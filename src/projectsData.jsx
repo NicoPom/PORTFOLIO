@@ -11,6 +11,18 @@ export const projects = [
       "For this project, I created a portfolio website for a talented blacksmith using the React JavaScript library and the Contenful headless CMS, giving him the ability to update his portfolio without having to rely on a developer.",
     stack: ["React", "Contentful", "API", "Netlify"],
   },
+  {
+    id: 2,
+    title: "Ratepunk Landing Page",
+    thumbnail: "img/projects/ratepunk.png",
+    alt: "ratepunk project thumbnail",
+    videoURL: "",
+    liveSite: "https://ratepunk.netlify.app/",
+    github: "https://github.com/NicoPom/ratepunk-landing-page",
+    description:
+      "For this project, I created a landing page for an browser extension company, using React.JS, HTML and CSS. I implemented an email input validation on the frontend side.",
+    stack: ["React", "HTML", "SASS", "Netlify"],
+  },
 ];
 //   {
 //     id: 2,
